@@ -11,7 +11,7 @@ import * as express from 'express';
 import { ErrorFilter } from './modules/errors/error.filter';
 
 console.log("Hello from UdaPeople!");
-// async function bootstrap() {
+async function bootstrap() {
   const logger = new AppLogger();
   logger.info(`NodeJs Version ${process.version}`);
   logger.info(JSON.stringify(process.env));
@@ -50,6 +50,6 @@ console.log("Hello from UdaPeople!");
   app.useGlobalFilters(new ErrorFilter());
   await app.listen(config.PORT);
   logger.log(`Listening on port ${config.PORT}.`);
-// }
+}
 
 bootstrap();
